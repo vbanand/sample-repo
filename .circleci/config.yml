@@ -1,0 +1,30 @@
+--- 
+jobs: 
+  build: 
+    docker: 
+      - 
+        image: "circleci/golang:1.12"
+    working_directory: /go/sample-repo
+    steps: 
+      - checkout
+      - 
+        restore_cache: 
+          keys: 
+            - "go-mod-v4-{{ checksum \"go.sum\" }}"
+      
+      - 
+        run: 
+          command: "go test -timeout 2m\n"
+          name: "Run unit tests"
+      - 
+        save_cache: 
+          key: "go-mod-v4-{{ checksum \"go.sum\" }}"
+          paths: 
+            - /go/pkg/mod
+    
+version: 2.1
+workflows: 
+  build-workflow: 
+    jobs: 
+      - build
+
