@@ -1,0 +1,9 @@
+{
+    "providerId": "55ca363c-4ebe-4e3f-8d1f-38eff56cc177",
+    "name": "Manifest_Provider",
+    "details": "Azure Managed Service Provider",
+    "version": "1.0.0",
+    "brokerVersion": "2.14",
+    "url": "http://40.114.125.118:3389",
+    "trusted": true
+}
